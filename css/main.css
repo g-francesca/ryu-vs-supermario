@@ -1,27 +1,31 @@
 body {
 	background-color: black;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.4;
+	text-align: center;
 }
 
 .main {
-	background-color: white;
-	margin-top: 10px;
-	padding-left: 100px;
+	background: white url('../images/mario.jpg') no-repeat 50% -217px;
+	margin-top: 50px;
 	/* Container has to accomodate our Ruy images and our Hadouken */
-	min-width: 1200px;
+	width: 1200px;
 	height: 500px;
+	margin: 50px auto 0;
 }
 
 .ryu {
 	float: left;
+	position: relative;
 }
 
-.ryu-ready, .ryu-still, .ryu-throwing {
+.ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
   width: 659px;
   height: 494px;
 }
 
 /* initially we want only the div.ryu-still to display */
-.ryu-ready, .ryu-throwing {
+.ryu-ready, .ryu-throwing, .ryu-cool {
   display: none;
 }
 
@@ -37,8 +41,25 @@ body {
   background-image: url('../images/ryu-throwing-hadouken.png');
 }
 
-.hadouken, .ryu-ready, .ryu-still, .ryu-throwing {
+.ryu-cool {
+  background-image: url('../images/ryu-cool.gif');
+}
+
+.hadouken, .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool, .mario-still {
   background-repeat: no-repeat;
+}
+
+.mario {
+	float: right;
+	position: relative;
+}
+
+.mario-still {
+	background-image: url('../images/mario-standing.png');
+	background-size: 80%;
+	width: 200px;
+  	height: 494px;
+  	margin-top: 130px;
 }
 
 .hadouken {
@@ -48,6 +69,97 @@ body {
   display: none;
   float: left;
   position: relative;
-  top: 167px;
+  top: 220px;
   left: -212px;
+}
+
+.instruction{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background-color: black;
+	color: white;
+	padding: 10px;
+	width: 150px;
+}
+
+.savemario {
+	opacity: 0;
+	right: 50px;
+	left: auto;
+}
+
+/* Animation */
+
+.animated {
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+          animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+          animation-name: fadeInRight;
 }
